@@ -11,7 +11,7 @@ import warnings
 
 def run():
     st.set_page_config(
-        page_title="Heart Failure Detection",
+        page_title="PSquare Heart Failure Detection",
         page_icon="❤",
         layout="wide"
     )
@@ -27,95 +27,93 @@ def run():
 
     st.markdown(
         """
-    <style>
-         .main {
-            text-align: center;
-         }
-         h3{
-            font-size: 25px
-         }   
-         .st-emotion-cache-16txtl3 h1 {
-         font: bold 29px arial;
-         text-align: center;
-         margin-bottom: 15px
+  <style>
+    .main {
+        text-align: center;
+    }
+    h3{
+        font-size: 25px
+    }   
+    .st-emotion-cache-16txtl3 h1 {
+        font: bold 29px arial;
+        text-align: center;
+        margin-bottom: 15px
+    }
+    div[data-testid=stSidebarContent] {
+        background-color: #D0E8F2; /* Powder Blue for Light Theme */
+        border-right: 4px solid #1B3B6F; /* Dark Sapphire Blue for Dark Theme */
+        padding: 8px!important
+    }
 
-         }
-         div[data-testid=stSidebarContent] {
-         background-color: #111;
-         border-right: 4px solid #222;
-         padding: 8px!important
+    div.block-containers{
+        padding-top: 0.5rem
+    }
 
-         }
+    .st-emotion-cache-z5fcl4{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1.1rem;
+        padding-right: 2.2rem;
+        overflow-x: hidden;
+    }
 
-         div.block-containers{
-            padding-top: 0.5rem
-         }
+    .st-emotion-cache-16txtl3{
+        padding: 2.7rem 0.6rem
+    }
 
-         .st-emotion-cache-z5fcl4{
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 1.1rem;
-            padding-right: 2.2rem;
-            overflow-x: hidden;
-         }
+    .plot-container.plotly{
+        border: 1px solid #8ABAD3; /* Light Steel Blue for Light Theme */
+        border-radius: 6px;
+    }
 
-         .st-emotion-cache-16txtl3{
-            padding: 2.7rem 0.6rem
-         }
+    div.st-emotion-cache-1r6slb0 span.st-emotion-cache-10trblm{
+        font: bold 24px tahoma
+    }
+    div [data-testid=stImage]{
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
 
-         .plot-container.plotly{
-            border: 1px solid #333;
-            border-radius: 6px;
-         }
+    div[data-baseweb=select]>div{
+        cursor: pointer;
+        background-color: #D0E8F2; /* Powder Blue for Light Theme */
+        border: 4px solid #1B3B6F; /* Dark Sapphire Blue for Dark Theme */
+    }
+    div[data-baseweb=select]>div:hover{
+        border: 4px solid #2C5282; /* Yale Blue for Accent Color */
+    }
 
-         div.st-emotion-cache-1r6slb0 span.st-emotion-cache-10trblm{
-            font: bold 24px tahoma
-         }
-         div [data-testid=stImage]{
-            text-align: center;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-        }
+    div[data-baseweb=base-input]{
+        background-color: #FFFFFF; /* White for Secondary Color */
+        border: 4px solid #1B3B6F; /* Dark Sapphire Blue for Dark Theme */
+        border-radius: 5px;
+        padding: 5px
+    }
 
-        div[data-baseweb=select]>div{
-            cursor: pointer;
-            background-color: #111;
-            border: 4px solid #333
-        }
-        div[data-baseweb=select]>div:hover{
-            border: 4px solid #B72F39
+    div[data-testid=stFormSubmitButton]> button{
+        width: 40%;
+        background-color: #8ABAD3; /* Light Steel Blue for Light Theme */
+        border: 2px solid #2C5282; /* Yale Blue for Accent Color */
+        padding: 18px;
+        border-radius: 30px;
+        opacity: 0.8;
+    }
+    div[data-testid=stFormSubmitButton]  p{
+        font-weight: bold;
+        font-size : 20px
+    }
 
-        }
+    div[data-testid=stFormSubmitButton]> button:hover{
+        opacity: 1;
+        border: 2px solid #2C5282; /* Yale Blue for Accent Color */
+        color: #1B3B6F; /* Dark Sapphire Blue for Dark Theme */
+    }
+</style>
 
-        div[data-baseweb=base-input]{
-            background-color: #111;
-            border: 4px solid #444;
-            border-radius: 5px;
-            padding: 5px
-        }
 
-        div[data-testid=stFormSubmitButton]> button{
-            width: 40%;
-            background-color: #111;
-            border: 2px solid #B72F39;
-            padding: 18px;
-            border-radius: 30px;
-            opacity: 0.8;
-        }
-        div[data-testid=stFormSubmitButton]  p{
-            font-weight: bold;
-            font-size : 20px
-        }
-
-        div[data-testid=stFormSubmitButton]> button:hover{
-            opacity: 1;
-            border: 2px solid #B72F39;
-            color: #fff
-        }
-
-    </style>
     """,
         unsafe_allow_html=True
     )
@@ -126,7 +124,7 @@ def run():
     st.write("")
 
     with header:
-        st.title("Heart Failure Prediction 💔")
+        st.title("Psquare Heart Failure Prediction 💔")
         st.write("")
 
     with content:
@@ -242,22 +240,24 @@ def run():
                     st.image("imgs/heartbeat.png",
                              caption="", width=100)
                     if predicted_value == 0:
-                        st.subheader("Expected He Is")
+                        st.subheader("The patient Is")
                         st.subheader(":green[Not a Heart Patient]")
 
                     else:
-                        st.subheader(f"Expected He Is")
+                        st.subheader(f"The patient")
                         st.subheader(":red[Heart Patient]")
 
                     with heart_disease:
                         st.image("imgs/heart.png", caption="", width=65)
-                        st.subheader(":green[*Not Heart Patient*]")
+                        st.subheader(":green[*does not have a Heart Disease*]")
                         st.subheader(f"{prediction_prop[0, 0]}%")
 
                     with no_heart_disease:
                         st.image("imgs/hearted.png", caption="", width=65)
-                        st.subheader(f":red[*Heart Patient*]")
+                        st.subheader(f":red[*has a Heart Disease*]")
                         st.subheader(f"{prediction_prop[0, 1]}%")
 
 
 run()
+
+
