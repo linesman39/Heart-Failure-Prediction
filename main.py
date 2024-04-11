@@ -119,7 +119,7 @@ def run():
 
 
     """, use_column_width = True
-        unsafe_allow_html=True
+        
     )
 
     header = st.container()
