@@ -135,7 +135,7 @@ def run():
         col1, col2 = st.columns([20, 9])
 
         with col1:
-            with st.form("Preidct"):
+            with st.form("Predict"):
                 c1, c2, c3 = st.columns(3)
                 with c1:
                     age = st.number_input('Age', min_value=1,
