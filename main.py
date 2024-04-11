@@ -57,7 +57,9 @@ add_bg_from_url()
 
          }
          div[data-testid=stSidebarContent] {
-         background-color: #111;
+         background-image: url("https://cdn.pixabay.com/photo/2019/04/24/11/27/flowers-4151900_960_720.jpg");
+         background-attachment: fixed;
+         background-size: cover
          border-right: 4px solid #222;
          padding: 8px!important
 
