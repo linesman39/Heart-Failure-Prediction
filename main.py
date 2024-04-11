@@ -13,7 +13,7 @@ def run():
     st.set_page_config(
         page_title="PatrPetra Heart Failure Detection",
         page_icon="❤",
-        layout="centered"
+        layout="wide"
     )
 
     warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -135,6 +135,7 @@ def run():
         col1, col2 = st.columns([30,10])
 
         with col1:
+            st.metric(label="Metric 1", value=123)
             with st.form("Preidct"):
                 c1, c2, c3 = st.columns(3)
                 with c1:
@@ -177,6 +178,7 @@ def run():
                 predict_button = st.form_submit_button("Predict 🚀")
 
         with col2:
+            st.metric(label="Metric 2", value=456)
             if predict_button:
                 patient_fasting_blood_sugar = 1
                 if fasting_blood_sugar == "Less Than 120 mg/dl":
