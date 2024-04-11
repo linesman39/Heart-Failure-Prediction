@@ -13,7 +13,7 @@ def run():
     st.set_page_config(
         page_title="PatrPetra Heart Failure Detection",
         page_icon="❤",
-        layout="wide"
+        layout="centered"
     )
 
     warnings.simplefilter(action='ignore', category=FutureWarning)
