@@ -132,7 +132,8 @@ def run():
         st.write("")
 
     with content:
-        col1 = st.columns([20, 9])
+        st.set_page_config(layout="wide")
+        col1, col2 = st.columns([20, 9])
 
         with col1:
             with st.form("Predict"):
@@ -176,8 +177,6 @@ def run():
 
                 predict_button = st.form_submit_button("Predict 🚀")
 
-    with content:
-        col2 = st.columns([20, 9])
         with col2:
             if predict_button:
                 patient_fasting_blood_sugar = 1
