@@ -123,7 +123,7 @@ def run():
     )
 
     header = st.container()
-    content = st.container(height=300)
+    content = st.container(height=1500)
 
     st.write("")
 
