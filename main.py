@@ -8,7 +8,7 @@ import streamlit as st
 from streamlit.components.v1 import html
 import warnings
 
-
+    
 def run():
     st.set_page_config(
         page_title="PatrPetra Heart Failure Detection",
@@ -123,7 +123,7 @@ def run():
     )
 
     header = st.container()
-    content = st.container()
+    content = st.container(height=300)
 
     st.write("")
 
