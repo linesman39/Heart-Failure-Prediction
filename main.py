@@ -176,7 +176,7 @@ def run():
 
                 predict_button = st.form_submit_button("Predict 🚀")
 
-         with content:
+    with content:
         col2 = st.columns([20, 9])
             if predict_button:
                 patient_fasting_blood_sugar = 1
