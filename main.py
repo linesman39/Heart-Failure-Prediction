@@ -119,10 +119,10 @@ def run():
 
 
     """, use_column_width = True
-        
+        unsafe_allow_html=True
     )
 
-    header = st.container()
+    header = st.container(height = 300)
     content = st.container(height=1500)
 
     st.write("")
