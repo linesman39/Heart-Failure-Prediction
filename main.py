@@ -232,7 +232,7 @@ def run():
                 new_data.extend(patient_exercise_angina)
                 new_data.extend(patient_slope)
 
-                result_container = st.container(300)
+                result_container = st.container()
                 with st.spinner(text='Predict The Value..'):
 
                     predicted_value = model.predict([new_data])[0]
