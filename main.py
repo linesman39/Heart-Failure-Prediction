@@ -179,13 +179,13 @@ def run():
     with content:
         col2 = st.columns([20, 9])
         with col2:
-                if predict_button:
+            if predict_button:
                 patient_fasting_blood_sugar = 1
-                if fasting_blood_sugar == "Less Than 120 mg/dl":
+            if fasting_blood_sugar == "Less Than 120 mg/dl":
                     patient_fasting_blood_sugar = 0
 
-                new_data = [age, blood_pressure, cholesterol,
-                            patient_fasting_blood_sugar, max_heart_rate, old_peak]
+            new_data = [age, blood_pressure, cholesterol,
+            patient_fasting_blood_sugar, max_heart_rate, old_peak]
 
                 # Gender
                 patient_gender = [1]  # Male
