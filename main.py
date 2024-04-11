@@ -187,14 +187,14 @@ def run():
             new_data = [age, blood_pressure, cholesterol,
             patient_fasting_blood_sugar, max_heart_rate, old_peak]
 
-                # Gender
-                patient_gender = [1]  # Male
+            # Gender
+            patient_gender = [1]  # Male
 
                 if gender == "Female":
                     patient_gender = [0]  # Female
 
-                # Chest Pain
-                patient_chest_pain_type = [0, 0, 0]  # ASY
+            # Chest Pain
+            patient_chest_pain_type = [0, 0, 0]  # ASY
 
                 if chest_pain_type == "Typical Angina":
                     patient_chest_pain_type = [0, 0, 1]
@@ -205,8 +205,8 @@ def run():
                 elif chest_pain_type == "Non-anginal Pain":
                     patient_chest_pain_type = [0, 1, 0]
 
-                # ECG
-                patinet_ecg = [0, 0]  # LVH
+            # ECG
+            patinet_ecg = [0, 0]  # LVH
 
                 if ecg == "Normal":
                     patinet_ecg = [1, 0]
@@ -214,8 +214,8 @@ def run():
                 elif ecg == "ST":
                     patinet_ecg = [0, 1]
 
-                # ExerciseAngina
-                patient_exercise_angina = [1]  # Yes
+            # ExerciseAngina
+            patient_exercise_angina = [1]  # Yes
 
                 if exercise_angina == "No":
                     patient_exercise_angina = [0]  # No
