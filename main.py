@@ -122,21 +122,20 @@ def run():
         unsafe_allow_html=True
     )
 
-    header = st.container(height = 200)
-    content = st.container(height=1500)
+    header = st.container()
+    content = st.container()
 
     st.write("")
 
     with header:
-        st.title("PatrPetra Heart Failure Prediction 💔")
+        st.title("Heart Failure Prediction 💔")
         st.write("")
 
     with content:
-        st.set_page_config(layout="wide")
-        col1, col2 = st.columns([20, 9])
+        col1, col2 = st.columns([7, 5])
 
         with col1:
-            with st.form("Predict"):
+            with st.form("Preidct"):
                 c1, c2, c3 = st.columns(3)
                 with c1:
                     age = st.number_input('Age', min_value=1,
