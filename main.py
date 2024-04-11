@@ -225,42 +225,43 @@ def run():
                 elif st_slope == "Up":
                     patient_slope = [0, 1]
 
-                # Appending All Data
-                new_data.extend(patient_gender)
-                new_data.extend(patient_chest_pain_type)
-                new_data.extend(patinet_ecg)
-                new_data.extend(patient_exercise_angina)
-                new_data.extend(patient_slope)
+    # Appending All Data
+    new_data.extend(patient_gender)
+    new_data.extend(patient_chest_pain_type)
+    new_data.extend(patinet_ecg)
+    new_data.extend(patient_exercise_angina)
+    new_data.extend(patient_slope)
 
-result_container = st.container()
-                with st.spinner(text='Predict The Value..'):
+    result_container = st.container()
+    with result_container
+    with st.spinner(text='Predict The Value..'):
 
-                    predicted_value = model.predict([new_data])[0]
-                    prediction_prop = np.round(
-                        model.predict_proba([new_data])*100)
-                    sleep(1.2)
+        predicted_value = model.predict([new_data])[0]
+        prediction_prop = np.round(
+        model.predict_proba([new_data])*100)
+        sleep(1.2)
 
-                    heart_disease, no_heart_disease = st.columns(2)
+        heart_disease, no_heart_disease = st.columns(2)
 
-                    st.image("imgs/heartbeat.png",
-                             caption="", width=100)
-                    if predicted_value == 0:
-                        st.subheader("Expected He Is")
-                        st.subheader(":green[Not a Heart Patient]")
+        st.image("imgs/heartbeat.png",
+                caption="", width=100)
+        if predicted_value == 0:
+            st.subheader("Expected He Is")
+            st.subheader(":green[Not a Heart Patient]")
 
-                    else:
-                        st.subheader(f"Expected He Is")
-                        st.subheader(":red[Heart Patient]")
+        else:
+            st.subheader(f"Expected He Is")
+            st.subheader(":red[Heart Patient]")
 
-                    with heart_disease:
-                        st.image("imgs/heart.png", caption="", width=65)
-                        st.subheader(":green[*Not Heart Patient*]")
-                        st.subheader(f"{prediction_prop[0, 0]}%")
+        with heart_disease:
+            st.image("imgs/heart.png", caption="", width=65)
+            st.subheader(":green[*Not Heart Patient*]")
+            st.subheader(f"{prediction_prop[0, 0]}%")
 
-                    with no_heart_disease:
-                        st.image("imgs/hearted.png", caption="", width=65)
-                        st.subheader(f":red[*Heart Patient*]")
-                        st.subheader(f"{prediction_prop[0, 1]}%")
+        with no_heart_disease:
+            st.image("imgs/hearted.png", caption="", width=65)
+            st.subheader(f":red[*Heart Patient*]")
+            st.subheader(f"{prediction_prop[0, 1]}%")
 
 
 run()
