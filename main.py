@@ -27,7 +27,7 @@ def run():
 
     st.markdown(
         """
-<style>
+    <style>
          .main {
             text-align: center;
          }
