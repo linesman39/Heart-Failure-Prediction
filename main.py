@@ -190,78 +190,78 @@ def run():
             # Gender
             patient_gender = [1]  # Male
 
-                if gender == "Female":
-                    patient_gender = [0]  # Female
+            if gender == "Female":
+                patient_gender = [0]  # Female
 
             # Chest Pain
             patient_chest_pain_type = [0, 0, 0]  # ASY
 
-                if chest_pain_type == "Typical Angina":
-                    patient_chest_pain_type = [0, 0, 1]
+            if chest_pain_type == "Typical Angina":
+                patient_chest_pain_type = [0, 0, 1]
 
-                elif chest_pain_type == "Atypical Angina":
-                    patient_chest_pain_type = [1, 0, 0]
+            elif chest_pain_type == "Atypical Angina":
+                patient_chest_pain_type = [1, 0, 0]
 
-                elif chest_pain_type == "Non-anginal Pain":
-                    patient_chest_pain_type = [0, 1, 0]
+            elif chest_pain_type == "Non-anginal Pain":
+                patient_chest_pain_type = [0, 1, 0]
 
             # ECG
             patinet_ecg = [0, 0]  # LVH
 
-                if ecg == "Normal":
-                    patinet_ecg = [1, 0]
+            if ecg == "Normal":
+                patinet_ecg = [1, 0]
 
-                elif ecg == "ST":
-                    patinet_ecg = [0, 1]
+            elif ecg == "ST":
+                patinet_ecg = [0, 1]
 
             # ExerciseAngina
             patient_exercise_angina = [1]  # Yes
 
-                if exercise_angina == "No":
-                    patient_exercise_angina = [0]  # No
+            if exercise_angina == "No":
+                patient_exercise_angina = [0]  # No
 
-                # Slope
-                patient_slope = [0, 0]  # Down
-                if st_slope == "Flat":
-                    patient_slope = [1, 0]
-                elif st_slope == "Up":
-                    patient_slope = [0, 1]
+            # Slope
+            patient_slope = [0, 0]  # Down
+            if st_slope == "Flat":
+                patient_slope = [1, 0]
+            elif st_slope == "Up":
+                patient_slope = [0, 1]
 
-                # Appending All Data
-                new_data.extend(patient_gender)
-                new_data.extend(patient_chest_pain_type)
-                new_data.extend(patinet_ecg)
-                new_data.extend(patient_exercise_angina)
-                new_data.extend(patient_slope)
+            # Appending All Data
+            new_data.extend(patient_gender)
+            new_data.extend(patient_chest_pain_type)
+            new_data.extend(patinet_ecg)
+            new_data.extend(patient_exercise_angina)
+            new_data.extend(patient_slope)
 
-                with st.spinner(text='Predict The Value..'):
+            with st.spinner(text='Predict The Value..'):
 
-                    predicted_value = model.predict([new_data])[0]
-                    prediction_prop = np.round(
-                        model.predict_proba([new_data])*100)
-                    sleep(1.2)
+                predicted_value = model.predict([new_data])[0]
+                prediction_prop = np.round(
+                    model.predict_proba([new_data])*100)
+                sleep(1.2)
 
-                    heart_disease, no_heart_disease = st.columns(2)
+                heart_disease, no_heart_disease = st.columns(2)
 
-                    st.image("imgs/heartbeat.png",
-                             caption="", width=100)
-                    if predicted_value == 0:
-                        st.subheader("The patient likely")
-                        st.subheader(":green[ does not have a heart disease]")
+                st.image("imgs/heartbeat.png",
+                            caption="", width=100)
+                if predicted_value == 0:
+                    st.subheader("The patient likely")
+                    st.subheader(":green[ does not have a heart disease]")
 
-                    else:
-                        st.subheader(f"The patient likely")
-                        st.subheader(":red[ has Heart Disease]")
+                else:
+                    st.subheader(f"The patient likely")
+                    st.subheader(":red[ has Heart Disease]")
 
-                    with heart_disease:
-                        st.image("imgs/heart.png", caption="", width=65)
-                        st.subheader(":green[*Likelihood of not having a Heart Disease*]")
-                        st.subheader(f"{prediction_prop[0, 0]}%")
+                with heart_disease:
+                    st.image("imgs/heart.png", caption="", width=65)
+                    st.subheader(":green[*Likelihood of not having a Heart Disease*]")
+                    st.subheader(f"{prediction_prop[0, 0]}%")
 
-                    with no_heart_disease:
-                        st.image("imgs/hearted.png", caption="", width=65)
-                        st.subheader(f":red[*likelihood of having a Heart Disease*]")
-                        st.subheader(f"{prediction_prop[0, 1]}%")
+                with no_heart_disease:
+                    st.image("imgs/hearted.png", caption="", width=65)
+                    st.subheader(f":red[*likelihood of having a Heart Disease*]")
+                    st.subheader(f"{prediction_prop[0, 1]}%")
 
 
 run()
