@@ -11,7 +11,7 @@ import warnings
 
 def run():
     st.set_page_config(
-        page_title="PSquare Heart Failure Detection",
+        page_title="PatrPetra Heart Failure Detection",
         page_icon="❤",
         layout="wide"
     )
@@ -124,7 +124,7 @@ def run():
     st.write("")
 
     with header:
-        st.title("Psquare Heart Failure Prediction 💔")
+        st.title("PatrPetra Heart Failure Prediction 💔")
         st.write("")
 
     with content:
