@@ -25,9 +25,9 @@ def run():
 
     model = pd.read_pickle("xgboost_heart_disease_detection_v1.pkl")
 
-st.markdown(
+    st.markdown(
         """
-    <style>
+<style>
          .main {
             text-align: center;
          }
