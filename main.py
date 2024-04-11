@@ -25,7 +25,7 @@ def run():
 
     model = pd.read_pickle("xgboost_heart_disease_detection_v1.pkl")
 
-    st.markdown(
+   st.markdown(
         """
     <style>
          .main {
@@ -116,11 +116,10 @@ def run():
         }
 
     </style>
-
-
     """,
         unsafe_allow_html=True
     )
+
     header = st.container()
     content = st.container()
     page2 = st.container()
