@@ -225,14 +225,14 @@ def run():
                 elif st_slope == "Up":
                     patient_slope = [0, 1]
 
-    # Appending All Data
-    new_data.extend(patient_gender)
-    new_data.extend(patient_chest_pain_type)
-    new_data.extend(patinet_ecg)
-    new_data.extend(patient_exercise_angina)
-    new_data.extend(patient_slope)
+                # Appending All Data
+                new_data.extend(patient_gender)
+                new_data.extend(patient_chest_pain_type)
+                new_data.extend(patinet_ecg)
+                new_data.extend(patient_exercise_angina)
+                new_data.extend(patient_slope)
 
-    result_container = st.container()
+    result_container = st.container(new_data)
     with result_container:
         with st.spinner(text='Predict The Value..'):
 
