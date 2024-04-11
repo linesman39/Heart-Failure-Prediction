@@ -181,7 +181,7 @@ def run():
 
         
     with content:
-        col3 = st.columns([5])
+        col25, col3, col4 = st.columns([1,5,1])
         with col3:
             if predict_button:
                 patient_fasting_blood_sugar = 1
