@@ -123,12 +123,12 @@ def run():
     )
 
     header = st.container()
-    content = st.container(1200)
+    content = st.container()
 
     st.write("")
 
     with header:
-        st.title("Heart Failure Prediction 💔")
+        st.title("PatrPetra Heart Failure Prediction 💔")
         st.write("")
 
     with content:
