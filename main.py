@@ -260,6 +260,6 @@ def run():
                 st.image("imgs/hearted.png", caption="", width=65)
                 st.subheader(f":red[*Likelihood of having heart disease*]")
                 st.subheader(f"{prediction_prop[0, 1]}%")
-
+run()
 
 run()
