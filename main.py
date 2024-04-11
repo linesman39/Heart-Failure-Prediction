@@ -249,7 +249,7 @@ def run():
 
                     with heart_disease:
                         st.image("imgs/heart.png", caption="", width=65)
-                        st.subheader(":green[*Likelihood not having a Heart Disease*]")
+                        st.subheader(":green[*Likelihood of not having a Heart Disease*]")
                         st.subheader(f"{prediction_prop[0, 0]}%")
 
                     with no_heart_disease:
