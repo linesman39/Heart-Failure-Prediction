@@ -40,7 +40,7 @@ def run():
         margin-bottom: 15px
     }
     div[data-testid=stSidebarContent] {
-        background-color: #D0E8F2; /* Powder Blue for Light Theme */
+        background-color: #1B3B6F; /* Powder Blue for Light Theme */
         border-right: 4px solid #1B3B6F; /* Dark Sapphire Blue for Dark Theme */
         padding: 8px!important
     }
@@ -79,7 +79,7 @@ def run():
 
     div[data-baseweb=select]>div{
         cursor: pointer;
-        background-color: #D0E8F2; /* Powder Blue for Light Theme */
+        background-color: #1B3B6F; /* Powder Blue for Light Theme */
         border: 4px solid #1B3B6F; /* Dark Sapphire Blue for Dark Theme */
     }
     div[data-baseweb=select]>div:hover{
