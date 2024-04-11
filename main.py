@@ -178,7 +178,9 @@ def run():
 
     with content:
         col2 = st.columns([20, 9])
-            if predict_button:
+
+            with col1:
+                if predict_button:
                 patient_fasting_blood_sugar = 1
                 if fasting_blood_sugar == "Less Than 120 mg/dl":
                     patient_fasting_blood_sugar = 0
