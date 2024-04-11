@@ -233,35 +233,34 @@ def run():
                 new_data.extend(patient_slope)
 
             
-            result_container = st.empty()
-            with st.spinner(text='Predict The Value..'):
+        result_container = st.empty()
+        with st.spinner(text='Predict The Value..'):
+            predicted_value = model.predict([new_data])[0]
+            prediction_prop = np.round(
+                model.predict_proba([new_data])*100)
+            sleep(1.2)
 
-                predicted_value = model.predict([new_data])[0]
-                prediction_prop = np.round(
-                    model.predict_proba([new_data])*100)
-                sleep(1.2)
+            heart_disease, no_heart_disease = st.columns(2)
 
-                heart_disease, no_heart_disease = st.columns(2)
+            st.image("imgs/heartbeat.png",
+                        caption="", width=100)
+            if predicted_value == 0:
+                st.subheader("The patient likely")
+                st.subheader(":green[does not have a heart disease]")
 
-                st.image("imgs/heartbeat.png",
-                            caption="", width=100)
-                if predicted_value == 0:
-                    st.subheader("The patient likely")
-                    st.subheader(":green[does not have a heart disease]")
+            else:
+                st.subheader(f"The patient likely")
+                st.subheader(":red[has a heart disease]")
 
-                else:
-                    st.subheader(f"The patient likely")
-                    st.subheader(":red[has a heart disease]")
+            with heart_disease:
+                st.image("imgs/heart.png", caption="", width=65)
+                st.subheader(":green[*Likelihood of not having a heart disease*]")
+                st.subheader(f"{prediction_prop[0, 0]}%")
 
-                with heart_disease:
-                    st.image("imgs/heart.png", caption="", width=65)
-                    st.subheader(":green[*Likelihood of not having a heart disease*]")
-                    st.subheader(f"{prediction_prop[0, 0]}%")
-
-                with no_heart_disease:
-                    st.image("imgs/hearted.png", caption="", width=65)
-                    st.subheader(f":red[*Likelihood of having heart disease*]")
-                    st.subheader(f"{prediction_prop[0, 1]}%")
+            with no_heart_disease:
+                st.image("imgs/hearted.png", caption="", width=65)
+                st.subheader(f":red[*Likelihood of having heart disease*]")
+                st.subheader(f"{prediction_prop[0, 1]}%")
 
 
 run()
