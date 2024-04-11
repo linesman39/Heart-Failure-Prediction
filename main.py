@@ -122,9 +122,9 @@ def run():
         unsafe_allow_html=True
     )
 
-    header = st.container()
-    content = st.container()
-    page2 = st.container()
+header = st.container()
+content = st.container()
+page2 = st.container()
 
     st.write("")
 
