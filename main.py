@@ -234,6 +234,13 @@ def run():
 
     result_container = st.container()
     with result_container:
+        # Appending All Data
+        new_data.extend(patient_gender)
+        new_data.extend(patient_chest_pain_type)
+        new_data.extend(patinet_ecg)
+        new_data.extend(patient_exercise_angina)
+        new_data.extend(patient_slope)
+        
         with st.spinner(text='Predict The Value..'):
 
             predicted_value = model.predict([new_data])[0]
