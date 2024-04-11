@@ -132,7 +132,7 @@ def run():
         st.write("")
 
     with content:
-       col0, col1, col2 = st.columns([1,5,1])
+        col0, col1, col2 = st.columns([1,5,1])
 
         with col1:
             with st.form("Preidct"):
