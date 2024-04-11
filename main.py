@@ -122,8 +122,8 @@ def run():
         unsafe_allow_html=True
     )
 
-    header = st.container()
-    content = st.container()
+    header = st.container(200)
+    content = st.container(1200)
 
     st.write("")
 
@@ -132,7 +132,7 @@ def run():
         st.write("")
 
     with content:
-        col1, col2 = st.columns([7, 5])
+        col1, col2 = st.columns([9, 20])
 
         with col1:
             with st.form("Preidct"):
