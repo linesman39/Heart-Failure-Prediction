@@ -248,21 +248,21 @@ def run():
                     st.image("imgs/heartbeat.png",
                             caption="", width=100)
                     if predicted_value == 0:
-                        st.subheader("Expected He Is")
-                        st.subheader(":green[Not a Heart Patient]")
+                        st.subheader("The patient likely")
+                        st.subheader(":green[does not have heart disease]")
 
                     else:
-                        st.subheader(f"Expected He Is")
-                        st.subheader(":red[Heart Patient]")
+                        st.subheader(f"The patient likely")
+                        st.subheader(":red[has heart disease]")
 
                     with heart_disease:
                         st.image("imgs/heart.png", caption="", width=65)
-                        st.subheader(":green[*Not Heart Patient*]")
+                        st.subheader(":green[*likelihood of not having a heart disease*]")
                         st.subheader(f"{prediction_prop[0, 0]}%")
 
                     with no_heart_disease:
                         st.image("imgs/hearted.png", caption="", width=65)
-                        st.subheader(f":red[*Heart Patient*]")
+                        st.subheader(f":red[*Likelihood of having a heart disease*]")
                         st.subheader(f"{prediction_prop[0, 1]}%")
 
 
