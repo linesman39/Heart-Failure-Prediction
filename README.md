@@ -5,10 +5,3 @@
 
 Credit: cloned and edited from https://github.com/modyehab810/Heart-Failure-Prediction/commits?author=modyehab810
 
-![image](https://github.com/modyehab810/Heart-Failure-Prediction/assets/114261123/2cbb1641-7271-4d8e-828a-960ed392fab6)
-
-<hr>
-
-![image](https://github.com/modyehab810/Heart-Failure-Prediction/assets/114261123/ea338423-d2fc-4b37-b266-9bdb11910207)
-
-
